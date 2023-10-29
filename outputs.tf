@@ -13,3 +13,14 @@ output "availability_zone" {
   description = "Public URL for Application Load Balancer"
   value       = data.aws_availability_zones.available.names
 }
+
+# Launch Template Outputs
+output "launch_template_id" {
+  description = "Launch Template ID"
+  value = aws_launch_template.launch_template_meow_new.id
+}
+
+output "launch_template_latest_version" {
+  description = "Launch Template Latest Version"
+  value = aws_launch_template.launch_template_meow_new.latest_version
+}
