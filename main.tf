@@ -174,7 +174,7 @@ resource "aws_lb_listener" "alb_listener" {
 /*if the number of requests to the target groups increases, the Auto Scaling group will automatically scale the number 
 of instances in the group up to handle the increased load. If the number of requests to the target groups decreases, 
 the Auto Scaling group will automatically scale the number of instances in the group down to save costs.*/
-resource "aws_autoscaling_group" "auto_scaling_group" {
+resource "aws_autoscaling_group" "auto_scaling_group_v1" {
   name             = "my-autoscaling-group"
   desired_capacity = 3
   max_size         = 6
