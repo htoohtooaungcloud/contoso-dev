@@ -186,8 +186,8 @@ resource "aws_autoscaling_group" "auto_scaling_group" {
     aws_lb_target_group.target_group.arn,
   ]
   launch_template {
-    id      = aws_launch_template.launch_template_meow_v2.id
-    version = aws_launch_template.launch_template_meow_v2.latest_version
+    id      = aws_launch_template.launch_template_meow_v3.id
+    version = aws_launch_template.launch_template_meow_v3.latest_version
   }
 }
 
@@ -241,7 +241,7 @@ data "aws_ami" "ubuntu" {
 }
 
 # Launch Template and ASG Resources
-resource "aws_launch_template" "launch_template_meow_v2" {
+resource "aws_launch_template" "launch_template_meow_v3" {
   name          = "${var.environment}-launch-template"
   image_id      = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
