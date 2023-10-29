@@ -249,7 +249,7 @@ resource "aws_launch_template" "launch_template_meow_new" {
   network_interfaces {
     device_index                = 0
     security_groups             = [aws_security_group.asg_security_group.id]
-    associate_public_ip_address = false
+    associate_public_ip_address = true
   }
   tag_specifications {
     resource_type = "instance"
