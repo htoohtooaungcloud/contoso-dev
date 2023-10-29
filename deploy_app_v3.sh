@@ -31,4 +31,6 @@ cat << EOM > /var/www/html/index.html
 </html>
 EOM
 
+sudo systemctl restart apache2
+
 echo "Script complete."
