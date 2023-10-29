@@ -132,7 +132,7 @@ resource "aws_nat_gateway" "nat_gateway" {
 /*Creates an Application Load Balancer (ALB) that is accessible from the internet, uses the application load balancer 
 type, and uses the ALB security group. The ALB will be created in all public subnets.*/
 resource "aws_lb" "alb" {
-  depends_on         = [aws_autoscaling_group.auto_scaling_group_v1]
+  depends_on         = [aws_autoscaling_group.auto_scaling_group]
   name               = "${var.environment}-alb"
   internal           = false
   load_balancer_type = "application"
@@ -174,7 +174,7 @@ resource "aws_lb_listener" "alb_listener" {
 /*if the number of requests to the target groups increases, the Auto Scaling group will automatically scale the number 
 of instances in the group up to handle the increased load. If the number of requests to the target groups decreases, 
 the Auto Scaling group will automatically scale the number of instances in the group down to save costs.*/
-resource "aws_autoscaling_group" "auto_scaling_group_v1" {
+resource "aws_autoscaling_group" "auto_scaling_group" {
   name             = "my-autoscaling-group"
   desired_capacity = 3
   max_size         = 6
