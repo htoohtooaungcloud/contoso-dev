@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "aws" {
-  region                   = var.bca-aws-master-region
+  region = var.bca-aws-master-region
 }
