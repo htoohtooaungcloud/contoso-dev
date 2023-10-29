@@ -132,7 +132,7 @@ resource "aws_nat_gateway" "nat_gateway" {
 /*Creates an Application Load Balancer (ALB) that is accessible from the internet, uses the application load balancer 
 type, and uses the ALB security group. The ALB will be created in all public subnets.*/
 resource "aws_lb" "alb" {
-  depends_on         = [aws_autoscaling_group.auto_scaling_group]
+  depends_on         = [aws_autoscaling_group.auto_scaling_group_v1]
   name               = "${var.environment}-alb"
   internal           = false
   load_balancer_type = "application"
