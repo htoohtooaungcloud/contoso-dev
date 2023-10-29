@@ -257,5 +257,5 @@ resource "aws_launch_template" "launch_template_meow_v2" {
       Name = "${var.environment}-asg-ec2"
     }
   }
-  user_data = filebase64("deploy_app_v2.sh")
+  user_data = filebase64("deploy_app_v3.sh")
 }
